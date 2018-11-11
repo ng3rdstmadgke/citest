@@ -26,7 +26,7 @@ composer install'''
     }
     stage('send_slack') {
       steps {
-        slackSend(message: 'success')
+        slackSend(message: 'success', color: 'good')
       }
     }
   }
