@@ -9,7 +9,8 @@ pipeline {
   stages {
     stage('Build') {
       steps {
-        sh '''ls -alF
+        sh '''pwd
+ls -alF
 composer install'''
       }
     }
