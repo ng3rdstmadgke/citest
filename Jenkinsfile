@@ -22,10 +22,10 @@ composer install'''
   }
   post {
     success {
-      slackSend(message: 'success : ${currentBuild.fullDisplayName}\n${env.BUILD_URL}', color: 'good')
+      slackSend(message: "success : ${currentBuild.fullDisplayName}\n${env.BUILD_URL}", color: 'good')
     }
     failure {
-      slackSend(message: 'error : ${currentBuild.fullDisplayName}\n${env.BUILD_URL}', color: 'danger')
+      slackSend(message: "error : ${currentBuild.fullDisplayName}\n${env.BUILD_URL}", color: 'danger')
     }
   }
 }
