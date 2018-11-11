@@ -7,13 +7,13 @@ pipeline {
 
   }
   stages {
-    stage('build') {
+    stage('Build') {
       steps {
         sh '''ls -alF
 composer install'''
       }
     }
-    stage('test') {
+    stage('Test') {
       steps {
         sh 'vendor/bin/phpunit tests'
       }
