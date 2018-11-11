@@ -19,10 +19,13 @@ composer install'''
         sh 'vendor/bin/phpunit tests'
       }
     }
-    stage('echo') {
-      steps {
-        echo 'Complete!!'
-      }
+  }
+  post {
+    success {
+      slackSend(message: "success : ${currentBuild.fullDisplayName} \n ${env.BUILD_URL}", color: 'good')
+    }
+    failure {
+      slackSend(message: "error : ${currentBuild.fullDisplayName} \n ${env.BUILD_URL}", color: 'danger')
     }
     stage('send_slack') {
       steps {
