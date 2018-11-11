@@ -19,5 +19,10 @@ composer install'''
         sh 'vendor/bin/phpunit tests'
       }
     }
+    stage('echo') {
+      steps {
+        echo 'Complete!!'
+      }
+    }
   }
 }
