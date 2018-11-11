@@ -24,5 +24,10 @@ composer install'''
         echo 'Complete!!'
       }
     }
+    stage('send_slack') {
+      steps {
+        slackSend(message: 'success')
+      }
+    }
   }
 }
