@@ -27,10 +27,5 @@ composer install'''
     failure {
       slackSend(message: "error : ${currentBuild.fullDisplayName} \n ${env.BUILD_URL}", color: 'danger')
     }
-    stage('send_slack') {
-      steps {
-        slackSend(message: 'success', color: 'good')
-      }
-    }
   }
 }
