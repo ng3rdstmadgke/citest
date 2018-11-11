@@ -6,6 +6,6 @@ use PHPUnit\Framework\TestCase;
 
 final class FunctionsTest extends TestCase {
   public function testSayHello() {
-    $this->assertEquals("Hello", Functions::sayHello());
+    $this->assertEquals("hello", Functions::sayHello());
   }
 }
