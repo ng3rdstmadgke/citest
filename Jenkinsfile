@@ -17,6 +17,10 @@ composer install'''
     stage('Test') {
       steps {
         sh 'vendor/bin/phpunit tests'
+        catchError() {
+          slackSend(message: 'error', failOnError: true, color: 'error')
+        }
+
       }
     }
   }
